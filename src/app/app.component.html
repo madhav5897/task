@@ -1,0 +1,164 @@
+<html>
+
+<head>
+  <title>Reactive form example
+  </title>
+</head>
+
+<body>
+  <div>
+    <h4> Reactive form example</h4>
+    <button class="button">Add user</button>
+<br>
+<br>
+    <form [formGroup]="employeeForm" (ngSubmit)="submitForm()">
+      <div>
+        <label for="firstname">First Name</label>
+        <input type="text" class="form-control" formControlName="firstname" [(ngModel)]="firstname" >
+      </div>
+      <div>
+      <span class="alert" *ngIf="firstnamerequired">
+          firstName is required.
+      </span>
+    </div>
+<br>
+      <div>
+        <label for="lastname">Last Name</label>
+        <input type="text" class="form-control" formControlName="lastname" [(ngModel)]="lastname">
+      </div>
+      <div>
+        <span class="alert"  *ngIf="lastnamerequired">
+            lastName is required.
+        </span>
+      </div>
+  <br>
+      <div>
+        <label for="Email">Email</label>
+        <input type="text" class="form-control" formControlName="email" [(ngModel)]="email">
+      </div>
+      <div>
+        <span class="alert" *ngIf="emailrequired">
+            email is required.
+        </span>
+      </div>
+
+<br>
+      <div>
+        <label for="phone">Phone</label>
+        <input type="number" class="form-control" formControlName="phone" [(ngModel)]="phone">
+      </div>
+      <div>
+        <span class="alert" *ngIf="phonerequired">
+            phone is required.
+        </span>
+      </div>
+<br>
+      <div>
+        <label for="company">Company</label>
+        <input type="text" class="form-control" formControlName="company" [(ngModel)]="company">
+      </div>      <div>
+        <span class="alert" *ngIf="companyrequired">
+            company is required.
+        </span>
+      </div>
+
+      <br>
+      <div>
+        <span>Gender</span>
+        <br>
+        <div>
+          <input type="radio" class="form-control" value="male" name="gender" [(ngModel)]="gender">
+            <label for="male">Male</label>
+        </div>
+        <div>
+            <input type="radio" class="form-control" name="gender" [(ngModel)]="gender" value="female">
+            <label for="female">Female</label>
+        </div>
+        <br>
+      </div>
+
+
+      <div>
+        <label for="birthday">Birthday:</label>
+        <input type="date" class="form-control" formControlName="birthday" [(ngModel)]="birthday">
+      </div>
+      <div>
+        <span class="alert" *ngIf="birthdayrequired">
+            birthday is required.
+        </span>
+      </div>
+
+      <br>
+
+      <div>
+        <label for="password">Password</label>
+        <input type="text" class="form-control" formControlName="password" [(ngModel)]="password">
+      </div>
+      <div>
+        <span class="alert" *ngIf="passwordrequired">
+            password is required.
+        </span>
+      </div>
+<br>
+      <div>
+        <label for="conform">Conform Password</label>
+        <input type="text" class="form-control" formControlName="conform" [(ngModel)]="conform">
+      </div>
+      <div>
+        <span class="alert" *ngIf="conformrequired">
+            conform password is required.
+        </span>
+      </div>
+
+      <br>
+      <div class="action" *ngIf="editemployee">
+        <button class="button" type="submit">Update</button>
+      </div>
+
+
+      <div class="action" *ngIf="noteditemployee">
+        <button class="button" type="submit">Register</button>
+      </div>
+    </form>
+    <br>
+    <button class="button" (click)="cancel()">cancel</button>
+
+
+    <br>
+    <br>
+    <table class="list" id="list">
+      <thead>
+
+        <tr class="head">
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Company</th>
+          <th>DOB</th>
+          <th>Edit</th>
+          <th>Delete</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let  employee of employeeData">
+
+          <td>{{employee.firstname}}</td>
+          <td>{{employee.lastname}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.phone}}</td>
+          <td>{{employee.company}}</td>
+          <td>{{employee.birthday}}</td>
+          <td><button (click)="edit(employee)">Edit</button></td>
+          <td><button (click)="delete(employee)">Delete</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+  </div>
+</body>
+
+</html>

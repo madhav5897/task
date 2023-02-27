@@ -1,0 +1,44 @@
+{
+  "Employees": [
+    {
+      "firstname": "madhav",
+      "lastname": "mekale",
+      "email": "madhavmekale1@gmail.com",
+      "company": "wing",
+      "birthday": "2023-02-02",
+      "phone": 8668978306,
+      "male": null,
+      "female": null,
+      "password": "asdf",
+      "id": 1
+    },
+    {
+      "firstname": "madhav",
+      "lastname": "mekale",
+      "email": "madhavmekale1@gmail.com",
+      "company": "wing",
+      "birthday": "2023-02-02",
+      "phone": 8668978306,
+      "male": null,
+      "female": null,
+      "password": "asdf",
+      "conform": "asdf",
+      "id": 2
+    },
+    {
+      "firstname": "madhav",
+      "lastname": "mekale",
+      "email": "madhavmekale1@gmail.com",
+      "company": "gfgfg",
+      "birthday": "2023-02-02",
+      "phone": 8668978306,
+      "gender": null,
+      "password": "a",
+      "conform": "a",
+      "id": 4
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
